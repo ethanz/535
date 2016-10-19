@@ -32,25 +32,13 @@ x = np.linspace(0, 5, num=100)
 
 # plot p(r|d) for d = 1, 2, 5, 10, 20
 
-y = get_y(x, 1)
-
+points = [1, 2, 5, 10, 20]
 plt.subplot(231)
-plt.plot(x, y)
-
-y = get_y(x, 2)
-plt.plot(x, y)
-
-y = get_y(x, 5)
-plt.plot(x, y)
-
-y = get_y(x, 10)
-plt.plot(x, y)
-
-y = get_y(x, 20)
-plt.plot(x, y)
+for p in points:
+    y = get_y(x, p)
+    plt.plot(x,y)
 
 # plot p(r*|d) for d = 1, 2, 5, 10, 20
-points = [1, 2, 5, 10, 20]
 x = np.array(points)
 tmp = []
 for i in x:
