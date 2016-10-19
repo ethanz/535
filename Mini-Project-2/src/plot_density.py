@@ -33,14 +33,12 @@ x = np.linspace(0, 5, num=100)
 # plot p(r|d) for d = 1, 2, 5, 10, 20
 
 y = get_y(x, 1)
-print(y)
 
 plt.subplot(231)
 plt.plot(x, y)
 
 y = get_y(x, 2)
 plt.plot(x, y)
-plt.title("p(r|d), d = 1")
 
 y = get_y(x, 5)
 plt.plot(x, y)
@@ -50,5 +48,7 @@ plt.plot(x, y)
 
 y = get_y(x, 20)
 plt.plot(x, y)
+
+# plot p(r*|d) for d = 1, 2, 5, 10, 20
 
 plt.show()

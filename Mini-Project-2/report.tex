@@ -64,8 +64,23 @@
         \end{equation}
         which is what we wanted to show.
     \item
+        Please refer to Figure 3.
     \item
-
+        Stationary points can be found by differentiating $p(r|d)$ and solve for $r$ when the derivative is 0::
+        \begin{equation} \label{eq4}
+            \frac{d}{dx}p(r|d) \propto[(d - 1)r^{d-2} + r^{d-1}(-\frac{r}{\sigma^2})]\exp(-\frac{r^2}{2\sigma^2}) = 0
+        \end{equation}
+        Since $\exp(-\frac{r^2}{2\sigma^2}) \neq 0$, we solve:
+        \begin{equation}\label{eq5}
+        \begin{split}
+            (d - 1)r^{d-2} + r^{d-1}(-\frac{r}{\sigma^2}) &= 0\\
+            (d - 1)r^{d-2} &= \frac{r^d}{\sigma^2}\\
+            \sigma^2(d - 1) &= \frac{r^d}{r^{d-2}}\\
+            r^2 &= \sigma^2(d - 1)\\
+            r &= \sqrt{d-1}\sigma
+        \end{split}
+        \end{equation}
+        As $d >> 1$, $r^* \approx \sqrt{d}\sigma$.
     \item
     \item
     \item
