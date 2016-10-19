@@ -50,5 +50,14 @@ y = get_y(x, 20)
 plt.plot(x, y)
 
 # plot p(r*|d) for d = 1, 2, 5, 10, 20
+points = [1, 2, 5, 10, 20]
+x = np.array(points)
+tmp = []
+for i in x:
+    tmp.append(p_func(math.sqrt(i-1), i))
+y = np.array(tmp)
+print (y)
+plt.subplot(232)
+plt.plot(x, y)
 
 plt.show()
