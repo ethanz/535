@@ -40,15 +40,32 @@
         \begin{figure}[h]
             \includegraphics[width=1\linewidth]{figure_2.png}
             \caption{Clustering using GMM.}
-            \label{fig:graph1}
+            \label{fig:graph2}
         \end{figure}
     \end{enumerate}
 \item
     \begin{enumerate}
     \item
+        For Gaussian distribution in $d$ dimensions, we have density function:
+        \begin{equation} \label{eq1}
+            p(x_d) = \frac{1}{\sqrt{(2\pi)^d|\Sigma|}}\exp(-\frac{1}{2}(x - \mu)^T\Sigma^{-1}(x - \mu))
+        \end{equation}
+        where $\Sigma$ is the covariance matrix and $|\Sigma|$ is the determinant of $\Sigma$. Since we have $\mu = 0$ and $\Sigma = \sigma^2I$, substitute them in (1) we get:
+        \begin{equation} \label{eq2}
+            p(x_d) = \frac{1}{(2\pi\sigma^2)^{d/2}}\exp(-\frac{||x||^2}{2\sigma^2})
+        \end{equation}
+        Since the integral of the probability density over a thin shell of radius $r$ and thickness $\epsilon$ is equivalent of the volume of the $d$ dimentional geometric space, we can find the integral of $p(x_d)$ by calculating the volume of the shell $S_dr^{d-1}\epsilon$:
+        \begin{equation} \label{eq3}
+            p(r|d)\epsilon = \int p(x_d)dx_d \approx p(r)S_dr^{d-1}\epsilon\\
+        \end{equation}
+        Since $||x||^2 = r^2$, substitute $r$ into (2) we have:
+        \begin{equation}
+            p(r|d)\epsilon = \frac{S_dr^{d-1}}{(2\pi\sigma^2)^{d/2}}\exp(-\frac{r^2}{2\sigma^2})\epsilon
+        \end{equation}
+        which is what we wanted to show.
+    \item
+    \item
 
-    \item
-    \item
     \item
     \item
     \item
