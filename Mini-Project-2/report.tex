@@ -33,6 +33,7 @@
             \label{fig:graph1}
         \end{figure}
     \item
+        The transformation must be orthogonal, that is, $AA^T = kI$. In this case, the mean and variance of each cluster are preserved thus K-Means will produce the same result. $b$ only affects the relative position of all data points to the origin to the same extent, thus won't affect clustering result.
     \item
         We can preprocess the data by normalization. Normalize the mean and scale each feature to unit variance.
     \item
@@ -64,7 +65,12 @@
         \end{equation}
         which is what we wanted to show.
     \item
-        Please refer to Figure 3.
+        Please refer to Figure 3. The code can be found in $/src/plot_density.py$.
+        \begin{figure}[h]
+            \includegraphics[width=1\linewidth]{figure_3.png}
+            \caption{$p(r|d) and p(r*d), d = 1,2,5,10,20$}
+            \label{fig:graph3}
+        \end{figure}
     \item
         Stationary points can be found by differentiating $p(r|d)$ and solve for $r$ when the derivative is 0::
         \begin{equation} \label{eq4}
@@ -82,6 +88,7 @@
         \end{equation}
         As $d >> 1$, $r^* \approx \sqrt{d}\sigma$.
     \item
+        Please refer to Figure 3. The code can be found in $/src/plot_density.py$.
     \item
     \item
     \end{enumerate}
@@ -89,6 +96,7 @@
     \begin{enumerate}
     \item
     \item
+        According to Figure 4, the result of K-Means and mean-shift similarly produce undesirable results when handling anisotropic data and unequal variance. Since mean-shift aims to find the centroids that represent the mean of points in a given region, it is susceptible to the same pitfalls as K-Means. Mean-shift is different from K-Means in that it does not require the number of clusters be specified apriori, thus performs well compare to K-Means. Although can not be seen in the graph, mean-shift should perform better than K-Means when handling unevenly sized blobs because the mean of a cluster is not affected by the number of points in the cluster.
     \end{enumerate}
 \end{enumerate}
 \end{document}
