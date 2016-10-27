@@ -1,9 +1,19 @@
-\begin{thebibliography}{1}\itemsep=-1pt
+\begin{thebibliography}{10}\itemsep=-1pt
 
 \bibitem{slides}
 D.~M. Blei.
 \newblock Probabilistic topic models, 2011.
 \newblock https://www.cs.princeton.edu/~blei/kdd-tutorial.pdf.
+
+\bibitem{lda}
+M.~I.~J. David M.~Blei, Andrew Y.~Ng.
+\newblock Latent dirichlet allocation.
+\newblock {\em Journal of Machine Learning Research}, 2(1), 2003.
+
+\bibitem{ptm}
+L.~K.~S. Diane J.~Hu.
+\newblock A probabilistic topic model for music analysis, 2009.
+\newblock NIPS Workshop on Applications for Topic Models: Text and Beyond.
 
 \bibitem{miami}
 Y.~Hu.
@@ -13,7 +23,7 @@ Y.~Hu.
 
 \bibitem{grace}
 G.~Inc.
-\newblock Entertainment metadata.
+\newblock Entertainment metadata, 2016.
 \newblock https://developer.gracenote.com/metadata.
 
 \bibitem{collaborative}
@@ -21,5 +31,25 @@ N.~R. M.~Elahi, F.~Ricci.
 \newblock A survey of active learning in collaborative filtering recommender
   systems.
 \newblock {\em Computer Science Review}, 20(1):29--50, 2016.
+
+\bibitem{hdp}
+P.~C. M.~Hoffman, D.~Blei.
+\newblock A probabilistic topic model for music analysis, 2008.
+\newblock Proceedings of the 9th International Conference on Music Information
+  Retrieval.
+
+\bibitem{context}
+R.~B. N.~Hariri, B.~Mobasher.
+\newblock Context-aware music recommendation based on latent topic sequential
+  patterns, 2008.
+
+\bibitem{influence}
+G.~C. U.~Shalit, D.~Weinshall.
+\newblock Modeling musical influence with topic models, 2013.
+
+\bibitem{hdp2}
+e.~a. Y.~Teh.
+\newblock Hierarchical dirichlet processes.
+\newblock Journal of the american statistical association.
 
 \end{thebibliography}

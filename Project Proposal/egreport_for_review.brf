@@ -3,3 +3,12 @@
 \backcite {collaborative}{{1}{1}{section.1}}
 \backcite {miami}{{1}{1}{section.1}}
 \backcite {grace}{{1}{1}{section.1}}
+\backcite {lda}{{2}{2}{section.2}}
+\backcite {ptm}{{2}{2}{section.2}}
+\backcite {hdp}{{2}{2}{section.2}}
+\backcite {context}{{2}{2}{section.2}}
+\backcite {influence}{{2}{2}{section.2}}
+\backcite {ptm}{{2}{3.1}{subsection.3.1}}
+\backcite {lda}{{2}{3.2}{subsection.3.2}}
+\backcite {hdp2}{{3}{3.3}{subsection.3.3}}
+\backcite {grace}{{3}{4}{section.4}}
