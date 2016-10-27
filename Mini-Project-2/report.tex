@@ -88,18 +88,30 @@
         \end{equation}
         As $d >> 1$, $r^* \approx \sqrt{d}\sigma$.
     \item
-        Please refer to Figure 3. The code can be found in $/src/plot_density.py$.
+        Please refer to Figure 3. The code can be found in $/src/plot\_density.py$.
     \item
-        To find the density at the origin, substitute $||x||^2 = 0$ into equation (2) and we have:
+        To find the density at the origin and $r^*$, substitute $||x||^2 = 0$ and $r^* = \sqrt{d}\sigma$ into equation (2) and we have:
     \begin{equation}
-        p(x = 0) = \frac{1}{(2\pi\sigma^2)^{1/2}}
+    \begin{split}
+        p(x = 0) &= \frac{1}{(2\pi\sigma^2)^{d/2}}\\
+        p(x = r^*) & = \frac{1}{(2\pi\sigma^2)^{d/2}}exp(-\frac{(\sqrt{d}\sigma)^2}{2\sigma^2})\\
+                   &=\frac{1}{(2\pi\sigma^2)^{d/2}}exp(-\frac{d}{2})
+    \end{split}
     \end{equation}
+    Thus it is obvious that $p(x = r^*) = exp(-\frac{d}{2})p(x = 0)$.
     \item
+        Although the value of the Gaussian is maximum at $x = 0$, there is very little probability mass at the origin. In fact, not until $r^* = \sqrt{d}\sigma$ is there a significant volume and the probability mass is concentrated in a thin shell near the surface. As the means of the Gaussians are very close, given data points from the mixture it is very hard to tell which Gaussian each data point comes from. Thus the analysis implies that it is hard to determine how much separation is needed between the means to tell which Gaussian generated which data point when modeling clusters in high dimensions as Gaussian densities. 
     \end{enumerate}
 \item
     \begin{enumerate}
     \item
+        The second assignment rule will not result in the same assignments as $c_{post}$ applied to model $M_{GMM}$. The reason is that $c_{post}$ does not care about the distance between the data point and the mean of the Gaussian. Consider a situation where point $x$ is far away from the mean of Gaussian $G_i$ but $Pr(x \in G_i)$ is high. In this case x will be assigned to $G_i$ applying $c_{post}$, while using $c_{locmode}$ there is likely be another Gaussian which has mode closer to $x$ than $G_i$. Thus the two assignment rules will produce different results. The condition under which the two rules will result in the same assignments is when the weight of each Gaussian in the mixture is equal. Thus the Gaussian with the highest posterior probability will always be the closest one to the data point, which is the same as the mode found by $c_{locmode}$
     \item
+        \begin{figure}[h]
+            \includegraphics[width=1\linewidth]{figure_4.png}
+            \caption{Applying Mean-Shift to the data from problem 1.}
+            \label{fig:graph4}
+        \end{figure}
         According to Figure 4, the result of K-Means and mean-shift similarly produce undesirable results when handling anisotropic data and unequal variance. Since mean-shift aims to find the centroids that represent the mean of points in a given region, it is susceptible to the same pitfalls as K-Means. Mean-shift is different from K-Means in that it does not require the number of clusters be specified apriori, thus performs well compare to K-Means. Although can not be seen in the graph, mean-shift should perform better than K-Means when handling unevenly sized blobs because the mean of a cluster is not affected by the number of points in the cluster.
     \end{enumerate}
 \end{enumerate}

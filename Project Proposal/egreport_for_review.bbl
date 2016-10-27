@@ -1,0 +1,25 @@
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{slides}
+D.~M. Blei.
+\newblock Probabilistic topic models, 2011.
+\newblock https://www.cs.princeton.edu/~blei/kdd-tutorial.pdf.
+
+\bibitem{miami}
+Y.~Hu.
+\newblock {\em A Music Recommendation System Based on User Behaviors and Genre
+  Classification}.
+\newblock PhD thesis.
+
+\bibitem{grace}
+G.~Inc.
+\newblock Entertainment metadata.
+\newblock https://developer.gracenote.com/metadata.
+
+\bibitem{collaborative}
+N.~R. M.~Elahi, F.~Ricci.
+\newblock A survey of active learning in collaborative filtering recommender
+  systems.
+\newblock {\em Computer Science Review}, 20(1):29--50, 2016.
+
+\end{thebibliography}

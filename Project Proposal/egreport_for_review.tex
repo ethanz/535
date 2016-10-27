@@ -1,0 +1,90 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{report}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+
+%%\reportfinalcopy % *** Uncomment this line for the final submission
+
+\def\reportPaperID{****} % *** Enter the Project Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+\ifreportfinal\pagestyle{empty}\fi
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{A Probabilistic Topic Models Based Music Recommendation System
+}
+
+\author{Lixuan Zhu\\
+Rutgers University-New Brunswick\\
+{\tt\small lz306@scarletmail.rutgers.edu}
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+\and
+Yu Zheng\\
+{\tt\small zy120@scarletmail.rutgers.edu}
+\and
+Yi Zhong\\
+{\tt\small yz614@scarletmail.rutgers.edu}
+\and
+Shihao Su\\
+{\tt\small ss2719@scarletmail.rutgers.edu}\\
+}
+
+\maketitle
+% \thispagestyle{empty}
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+   We will implement a music recommendation system utilizing Probabilistic Topic Models. Specifically, given a song, the system will find a series of similar songs according to features such as metadata, tags and acoustic characteristics.
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+\section{Introduction}
+
+%-------------------------------------------------------------------------
+Topic Models are a collection of algorithms that finds the underlying topics from a large amount of text documents. According to Blei, each document is a mixture of corpus-wide topics; each topic is a distribution over words and each word is drawn from one of those topics \cite{slides}. When a distribution of topics of the document emerge from topic modeling, we can compute the similarity between two documents by comparing their topic distributions, thus the documents with high similarity to the given document can be recommended to user.
+\par
+There are two general approaches when designing recommendation systems: collaborative filtering and content-based filtering, each with their strengths and weaknesses. Collaborative filtering utilizes the preferences of existing users and predict whether a specific user will like an item based on the decision of similar users. Music streaming services such as Last.fm utilizes collaborative filtering to recommend songs based on specific user profiles \cite{collaborative}. However, a natural challenge for collaborative filtering methods is the lack of user ratings, also referred to as the “cold start” problem \cite{collaborative}. For example, when a new song is published, there is not enough user rating for the system to know which users will like the song. The other method, content-based filtering, focuses on the similarity of the songs itself. Pandora, another popular music streaming service, utilized the metadata(artist, genre, etc.) and tags to find similar songs given an initial seed song \cite{miami}. Although content-based approaches require very little initial information, it is limited to recommend the songs similar to the original seed since the information about the song is limited.
+   \par
+   In this project, we take the content-based filtering a step forward. We utilize two probabilistic topic models, latent dirichlet allocation(LDA) and hierarchical dirichlet process(HDP), to discover the similarity between songs and compare their performances. We consider each song as a document and the features of the song as words. It is important to define what we mean by features. Traditional recommendation systems uses the metadata of the song itself and tags by users as measures for similarity. In our model, we incorporate acoustic properties of the music such as pitch, tempo, verses and chords used, mood progression, etc. The timeline API from Gracenote is used to retrieve acoustic properties from the songs\cite{grace}. Collectively, we consider the traditional measures and acoustic properties of the song as features. Thus each feature is a word in the document. The probabilistic topic models process the entire collection of songs as a corpus. The advantage of utilizing acoustic properties is the range of songs recommended can be extended. Songs with similar acoustic properties may not be in the same genre or tagged with similar attributes. The details of the implementation of our models and the challenges of utilizing acoustic properties will be covered in section 3.
+   \par
+   Another focus of our project is to compare two topic modeling algorithms, LDA and HDP. We plan to analyze the performance of both algorithms in terms of complexity and recommendation result. In comparison, our HDP model is based on LDA and more complex in terms of implementation. However, LDA requires a priori entry of the number of topics in the corpus. How to choose the input value and whether the recommendations are meaningful will be addressed in section 4.
+
+
+%------------------------------------------------------------------------
+\section{Prior Work}
+
+\section{Models, Assumptions and Requirements}
+
+\subsection{Word Model of Songs}
+\subsection{Latent Dirichlet Allocation}
+\subsection{Hierarchical Dirichlet Process}
+
+\section{Evaluation}
+
+\section{Plan}
+The project will be finished by early December. The first step is to evaluate the existing implementation of LDA and HDP algorithms and see if any of them can be tweaked to fit our data. This step will be finished by Nov. 6th. The next step will be to explore ways to measure similarities between songs. When we have a distribution of features of the songs, how much weight do we put on each feature and how do we calculate the similarities? This step will be done by Nov. 13th. The third step will be building user interface to interactively make recommendations. This step will be done by Nov. 27th. The last step will be testing the system, evaluating the algorithms and writing project report. This step will be finished by Dec. 3th.
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{egbib}
+}
+
+
+\end{document}
