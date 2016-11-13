@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sklearn as sk
 import math
+import _ppca
 import networkx as nx
 from scipy.spatial import distance
 from sklearn.decomposition import PCA
@@ -112,7 +113,8 @@ plt.subplot(122)
 plt.scatter([i for i in range(250)], test_error)
 plt.title("Reconstruction error for test set")
 # PPCA
-
+ppca = _ppca.PPCA(data[:750])
+ppca.fit()
 # GraphLasso
 gl = GraphLassoCV()
 fig, ax = plt.subplots(1,2,figsize=(12,8))
